@@ -23,7 +23,7 @@ class WMOReader():
         for tid in list(self.records.keys()):
             for sid in list(self.records[tid].keys()):
                 #snd = self.create_sounding(tid, sid)
-                if snd is None: continue
+                #if snd is None: continue
                 for msg in self.records[tid][sid].keys():
                     wmo_msg = self.records[tid][sid][msg]
                     print(self.filename, tid, sid, msg) 
