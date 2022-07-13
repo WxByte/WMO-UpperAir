@@ -227,8 +227,9 @@ class WMOReader():
 
 def main():
     filepath = sys.argv[1]
-    WMOReader(filepath)
-    print(WMOReader)
+    mydata = WMOReader(filepath)
+    print(mydata)
+    print(mydata.records)
     #files = glob.glob("/ldm/data/upperair/sonde/20220104*.uair")
     #for file in files:
     #    WMOReader(file)
