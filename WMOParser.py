@@ -1,5 +1,5 @@
 from WMOMessage import WMOUpperAirMessage
-from WMOData import WMOSounding
+#from WMOData import WMOSounding
 import pandas as pd
 import numpy as np
 import sys, os
@@ -22,7 +22,7 @@ class WMOReader():
 
         for tid in list(self.records.keys()):
             for sid in list(self.records[tid].keys()):
-                snd = self.create_sounding(tid, sid)
+                #snd = self.create_sounding(tid, sid)
                 if snd is None: continue
                 for msg in self.records[tid][sid].keys():
                     wmo_msg = self.records[tid][sid][msg]
@@ -226,11 +226,12 @@ class WMOReader():
 
 
 def main():
-    #filepath = sys.argv[1]
-    #WMOReader(filepath)
-    files = glob.glob("/ldm/data/upperair/sonde/20220104*.uair")
-    for file in files:
-        WMOReader(file)
+    filepath = sys.argv[1]
+    WMOReader(filepath)
+    print(WMOReader)
+    #files = glob.glob("/ldm/data/upperair/sonde/20220104*.uair")
+    #for file in files:
+    #    WMOReader(file)
 
 if __name__ == "__main__":
     main()
